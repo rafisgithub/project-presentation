@@ -60,9 +60,9 @@ function Body({ children }: { children: React.ReactNode }) {
   return <div style={{ flex: 1, position: "relative" }}>{children}</div>;
 }
 
-function Card({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+function Card({ children, style, className }: { children: React.ReactNode; style?: React.CSSProperties; className?: string }) {
   return (
-    <div style={{ background: LB, border: `1px solid ${DV}`, borderRadius: 16, padding: "20px 24px", backdropFilter: "blur(10px)", ...style }}>
+    <div className={className} style={{ background: LB, border: `1px solid ${DV}`, borderRadius: 16, padding: "20px 24px", backdropFilter: "blur(10px)", ...style }}>
       {children}
     </div>
   );
