@@ -92,7 +92,7 @@ function S1() {
         <div style={{ display: "flex", gap: 32 }}>
           <div><p style={{ fontSize: 12, color: "#64748b", textTransform: "uppercase", marginBottom: 6, letterSpacing: "0.1em" }}>Department</p><p style={{ fontSize: 16, fontWeight: 700 }}>Computer Science & Engineering</p></div>
           <div style={{ width: 1, background: "rgba(255,255,255,0.15)" }} />
-          <div><p style={{ fontSize: 12, color: "#64748b", textTransform: "uppercase", marginBottom: 6, letterSpacing: "0.1em" }}>Institution</p><p style={{ fontSize: 16, fontWeight: 700 }}>Daffodil International University</p></div>
+          <div><p style={{ fontSize: 12, color: "#64748b", textTransform: "uppercase", marginBottom: 6, letterSpacing: "0.1em" }}>Institution</p><p style={{ fontSize: 16, fontWeight: 700 }}>Sonargaon University</p></div>
         </div>
       </div>
     </div>
@@ -135,7 +135,7 @@ function S3() {
             <h3 style={{ fontSize: "2.8rem", fontWeight: 900, color: N, marginBottom: 12 }}>Md Shamim Hossain</h3>
             <p style={{ fontSize: "1.4rem", color: TX, fontWeight: 600, marginBottom: 32 }}>Assistant Professor</p>
             <div style={{ height: 2, background: G, width: 80, margin: "0 auto 32px" }} />
-            <p style={{ fontSize: 15, color: SM, lineHeight: 1.8 }}>Department of Computer Science and Engineering<br/>Daffodil International University</p>
+            <p style={{ fontSize: 15, color: SM, lineHeight: 1.8 }}>Department of Computer Science and Engineering<br/>Sonargaon University</p>
           </div>
         </div>
       </Body>
