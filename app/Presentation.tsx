@@ -12,9 +12,10 @@ const TX = "#1e293b"; // Text
 const DV = "#e2e8f0"; // Divider
 
 const TEAM = [
-  { name: "Shah Tamim", id: "212-15-3783" },
-  { name: "Al Mamun", id: "212-15-3852" },
-  { name: "Rafiqul Islam", id: "212-15-3801" },
+  { name: "ARFIN MIAH", id: "CSE2202026112", img: "/images/ARFIN MIAH CSE2202026112.jpeg" },
+  { name: "MD. MUNAYAM HOSSAIN", id: "CSE2202026072", img: "/images/MD. MUNAYAM HOSSAIN CSE2202026072.jpeg" },
+  { name: "MD. SHAH TAMIM", id: "CSE2202026020", img: "/images/MD. SHAH TAMIM CSE2202026020.png" },
+  { name: "MD. AL MAMUN", id: "CSE2201025124", img: "/images/MD AL MAMAUN CSE2201025124.png" },
 ];
 
 /* ══════════════════════════════════════════════════════════════════
@@ -36,7 +37,7 @@ function SH({ num, label, title, dark }: { num: string; label: string; title: st
         <div style={{ height: 1, flex: 1, background: dark ? "rgba(255,255,255,0.1)" : DV }} />
         <span style={{ fontFamily: "monospace", fontSize: 11, color: dark ? "rgba(255,255,255,0.4)" : SM }}>{num.padStart(2, "0")}</span>
       </div>
-      <h2 style={{ fontSize: "clamp(1.5rem, 4vw, 2.2rem)", fontWeight: 900, color: dark ? "#fff" : N, lineHeight: 1.2 }}>{title}</h2>
+      <h2 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, color: dark ? "#fff" : N, lineHeight: 1.1, letterSpacing: "-0.02em" }}>{title}</h2>
     </div>
   );
 }
@@ -87,11 +88,11 @@ function S1() {
         <div style={{ width: 40, height: 4, background: G, marginBottom: 24 }} />
         <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: 12 }}>Capstone Project Presentation</p>
         <h1 style={{ fontSize: "4.5rem", fontWeight: 900, lineHeight: 1, marginBottom: 20 }}>ToothCare<span style={{ color: G }}>+</span></h1>
-        <p style={{ fontSize: "1.2rem", color: "#94a3b8", maxWidth: 500, marginBottom: 40 }}>An AI-Powered Comprehensive Dental Health Companion for Modern Oral Care.</p>
-        <div style={{ display: "flex", gap: 24 }}>
-          <div><p style={{ fontSize: 10, color: "#64748b", textTransform: "uppercase", marginBottom: 4 }}>Department</p><p style={{ fontSize: 13, fontWeight: 700 }}>Computer Science & Engineering</p></div>
-          <div style={{ width: 1, background: "rgba(255,255,255,0.1)" }} />
-          <div><p style={{ fontSize: 10, color: "#64748b", textTransform: "uppercase", marginBottom: 4 }}>Institution</p><p style={{ fontSize: 13, fontWeight: 700 }}>Daffodil International University</p></div>
+        <p style={{ fontSize: "1.4rem", color: "#94a3b8", maxWidth: 650, marginBottom: 48, lineHeight: 1.6 }}>An AI-Powered Comprehensive Dental Health Companion for Modern Oral Care.</p>
+        <div style={{ display: "flex", gap: 32 }}>
+          <div><p style={{ fontSize: 12, color: "#64748b", textTransform: "uppercase", marginBottom: 6, letterSpacing: "0.1em" }}>Department</p><p style={{ fontSize: 16, fontWeight: 700 }}>Computer Science & Engineering</p></div>
+          <div style={{ width: 1, background: "rgba(255,255,255,0.15)" }} />
+          <div><p style={{ fontSize: 12, color: "#64748b", textTransform: "uppercase", marginBottom: 6, letterSpacing: "0.1em" }}>Institution</p><p style={{ fontSize: 16, fontWeight: 700 }}>Daffodil International University</p></div>
         </div>
       </div>
     </div>
@@ -105,12 +106,14 @@ function S2() {
       <SH num="02" label="Introduction" title="The Development Team" />
       <PB idx={0} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginTop: 40 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginTop: 20 }}>
           {TEAM.map((m, i) => (
-            <Card key={i} style={{ textAlign: "center", padding: "40px 20px" }}>
-              <div style={{ width: 64, height: 64, borderRadius: "50%", background: N, color: G, fontSize: 24, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>{m.name[0]}</div>
-              <p style={{ fontSize: 16, fontWeight: 900, color: N, marginBottom: 4 }}>{m.name}</p>
-              <p style={{ fontSize: 12, color: SM, fontFamily: "monospace" }}>ID: {m.id}</p>
+            <Card key={i} style={{ textAlign: "center", padding: "24px 12px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div style={{ width: 120, height: 140, borderRadius: 12, background: "#e2e8f0", overflow: "hidden", marginBottom: 16, border: `1px solid ${DV}` }}>
+                <img src={m.img} alt={m.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </div>
+              <p style={{ fontSize: 14, fontWeight: 900, color: N, marginBottom: 4, height: 40, display: "flex", alignItems: "center", justifyContent: "center" }}>{m.name}</p>
+              <p style={{ fontSize: 11, color: SM, fontFamily: "monospace", letterSpacing: "0.05em" }}>{m.id}</p>
             </Card>
           ))}
         </div>
@@ -128,11 +131,11 @@ function S3() {
       <Body>
         <div style={{ display: "flex", justifyContent: "center", marginTop: 40 }}>
           <div style={{ width: "100%", maxWidth: 600, padding: "40px", background: LB, border: `1px solid ${DV}`, borderRadius: 16, textAlign: "center" }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: G, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 16 }}>Guided By</p>
-            <h3 style={{ fontSize: "2rem", fontWeight: 900, color: N, marginBottom: 8 }}>Md Shamim Hossain</h3>
-            <p style={{ fontSize: "1.1rem", color: TX, fontWeight: 600, marginBottom: 24 }}>Assistant Professor</p>
-            <div style={{ height: 1, background: DV, width: 100, margin: "0 auto 24px" }} />
-            <p style={{ fontSize: 13, color: SM, lineHeight: 1.6 }}>Department of Computer Science and Engineering<br/>Daffodil International University</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: G, textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: 20 }}>Guided By</p>
+            <h3 style={{ fontSize: "2.8rem", fontWeight: 900, color: N, marginBottom: 12 }}>Md Shamim Hossain</h3>
+            <p style={{ fontSize: "1.4rem", color: TX, fontWeight: 600, marginBottom: 32 }}>Assistant Professor</p>
+            <div style={{ height: 2, background: G, width: 80, margin: "0 auto 32px" }} />
+            <p style={{ fontSize: 15, color: SM, lineHeight: 1.8 }}>Department of Computer Science and Engineering<br/>Daffodil International University</p>
           </div>
         </div>
       </Body>
@@ -147,12 +150,20 @@ function S4() {
       <SH num="04" label="Overview" title="Project Motivation" />
       <PB idx={0} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-          <Card><p style={{ fontSize: 40, marginBottom: 16 }}>🦷</p><h4 style={{ fontWeight: 900, marginBottom: 8 }}>The Problem</h4><p style={{ fontSize: 13, color: SM, lineHeight: 1.6 }}>Oral health is often neglected due to high costs, lack of awareness, and irregular checkups. Early detection of dental issues is crucial but often missed.</p></Card>
-          <Card><p style={{ fontSize: 40, marginBottom: 16 }}>🚀</p><h4 style={{ fontWeight: 900, marginBottom: 8 }}>The Solution</h4><p style={{ fontSize: 13, color: SM, lineHeight: 1.6 }}>ToothCare+ provides an AI-driven scanning tool, real-time consultation via chat, and smart brushing tracking to promote preventive dental care.</p></Card>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 20 }}>
+          <Card style={{ padding: "32px" }}>
+            <p style={{ fontSize: 56, marginBottom: 20 }}>🦷</p>
+            <h4 style={{ fontSize: 24, fontWeight: 900, marginBottom: 12 }}>The Problem</h4>
+            <p style={{ fontSize: 16, color: SM, lineHeight: 1.7 }}>Oral health is often neglected due to high costs, lack of awareness, and irregular checkups. Early detection of dental issues is crucial but often missed by traditional means.</p>
+          </Card>
+          <Card style={{ padding: "32px" }}>
+            <p style={{ fontSize: 56, marginBottom: 20 }}>🚀</p>
+            <h4 style={{ fontSize: 24, fontWeight: 900, marginBottom: 12 }}>The Solution</h4>
+            <p style={{ fontSize: 16, color: SM, lineHeight: 1.7 }}>ToothCare+ provides an AI-driven scanning tool, real-time consultation via chat, and smart brushing tracking to promote preventive dental care for everyone.</p>
+          </Card>
         </div>
-        <div style={{ marginTop: 24, padding: "20px", background: `${G}10`, borderRadius: 12, border: `1px solid ${G}30` }}>
-          <p style={{ fontSize: 13, color: N, fontWeight: 600 }}>Objective: To democratize dental diagnostics through computer vision and improve daily oral hygiene habits.</p>
+        <div style={{ marginTop: 32, padding: "24px 32px", background: `${G}10`, borderRadius: 16, border: `2px solid ${G}30`, textAlign: "center" }}>
+          <p style={{ fontSize: 18, color: N, fontWeight: 800 }}>Objective: To democratize dental diagnostics through computer vision and improve daily oral hygiene habits globally.</p>
         </div>
       </Body>
     </Slide>
@@ -166,18 +177,18 @@ function S5() {
       <SH num="05" label="System Architecture" title="High-Level Overview" />
       <PB idx={0} />
       <Body>
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 10 }}>
           {[
-            { t: "Frontend Layer", d: "Flutter Mobile App (iOS/Android)", i: "📱", g: "User Interface, Camera Integration, State Management" },
-            { t: "API Layer", d: "Django REST Framework", i: "🔌", g: "Business Logic, Authentication, API Endpoints" },
-            { t: "AI & Intelligence", d: "OpenAI GPT-4o Vision & LLM", i: "🧠", g: "Dental Scan Analysis, Smart Assistant" },
-            { t: "Data & Storage", d: "PostgreSQL & Redis", i: "💾", g: "User Profiles, Scan History, Caching" }
+            { t: "Frontend Layer", d: "Flutter Mobile App", i: "📱", g: "User Interface, Camera Integration, State Management (Provider/GetX)" },
+            { t: "API Layer", d: "Django REST Framework", i: "🔌", g: "Business Logic, Authentication (JWT), RESTful Endpoints" },
+            { t: "AI & Intelligence", d: "OpenAI GPT-4o Vision", i: "🧠", g: "Dental Scan Analysis, Smart Chat Assistant, JSON Output" },
+            { t: "Data & Storage", d: "PostgreSQL & Redis", i: "💾", g: "Relational Data, Session Caching, Background Task Queues" }
           ].map((x, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 16, padding: "12px 20px", background: LB, border: `1px solid ${DV}`, borderRadius: 12 }}>
-              <span style={{ fontSize: 24 }}>{x.i}</span>
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 24, padding: "16px 28px", background: LB, border: `1px solid ${DV}`, borderRadius: 16 }}>
+              <span style={{ fontSize: 32 }}>{x.i}</span>
               <div style={{ flex: 1 }}>
-                <p style={{ fontSize: 13, fontWeight: 900, color: N }}>{x.t} <span style={{ fontWeight: 400, color: G, marginLeft: 8 }}>{x.d}</span></p>
-                <p style={{ fontSize: 11, color: SM }}>{x.g}</p>
+                <p style={{ fontSize: 18, fontWeight: 900, color: N }}>{x.t} <span style={{ fontWeight: 600, color: G, marginLeft: 12, fontSize: 14 }}>{x.d}</span></p>
+                <p style={{ fontSize: 14, color: SM, marginTop: 2 }}>{x.g}</p>
               </div>
             </div>
           ))}
@@ -194,22 +205,26 @@ function S6() {
       <SH num="06" label="Deployment" title="Cloud & Infrastructure" />
       <PB idx={0} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-          <Card>
-            <p style={{ fontSize: 11, fontWeight: 700, color: G, marginBottom: 12 }}>Backend Stack</p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {["Docker", "Gunicorn", "Nginx", "PostgreSQL", "Redis", "Celery"].map(t => <Pill key={t} label={t} />)}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 20 }}>
+          <Card style={{ padding: "32px" }}>
+            <p style={{ fontSize: 14, fontWeight: 900, color: G, marginBottom: 20, textTransform: "uppercase", letterSpacing: "0.1em" }}>Backend Infrastructure</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+              {["Docker", "Gunicorn", "Nginx", "PostgreSQL", "Redis", "Celery", "Redis Stack", "WhiteNoise"].map(t => (
+                <span key={t} style={{ padding: "8px 16px", borderRadius: 8, background: "#f1f5f9", color: N, fontSize: 13, fontWeight: 700, border: `1px solid ${DV}` }}>{t}</span>
+              ))}
             </div>
           </Card>
-          <Card>
-            <p style={{ fontSize: 11, fontWeight: 700, color: G, marginBottom: 12 }}>Mobile Stack</p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {["Flutter SDK", "Firebase FCM", "App Store", "Play Store"].map(t => <Pill key={t} label={t} />)}
+          <Card style={{ padding: "32px" }}>
+            <p style={{ fontSize: 14, fontWeight: 900, color: G, marginBottom: 20, textTransform: "uppercase", letterSpacing: "0.1em" }}>Mobile Ecosystem</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+              {["Flutter SDK 3.x", "Dart", "Firebase FCM", "RevenueCat", "App Store Connect", "Play Console"].map(t => (
+                <span key={t} style={{ padding: "8px 16px", borderRadius: 8, background: "#f1f5f9", color: N, fontSize: 13, fontWeight: 700, border: `1px solid ${DV}` }}>{t}</span>
+              ))}
             </div>
           </Card>
         </div>
-        <div style={{ marginTop: 24, textAlign: "center" }}>
-          <p style={{ fontSize: 12, color: SM }}>Production environment hosted on VPS using Dockerized containers for scalability.</p>
+        <div style={{ marginTop: 40, textAlign: "center" }}>
+          <p style={{ fontSize: 16, color: SM, fontStyle: "italic" }}>"A high-availability architecture designed for seamless scalability and cross-platform reliability."</p>
         </div>
       </Body>
     </Slide>
@@ -223,13 +238,19 @@ function S7() {
       <SH num="07" label="Backend Development" title="Robust Engine with Django" />
       <PB idx={1} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 10 }}>
           {[
-            { i: "🛡️", t: "Security", d: "JWT Authentication & Role-based access control." },
-            { i: "⚡", t: "Performance", d: "Redis caching & Celery for background tasks." },
-            { i: "📐", t: "Scalability", d: "Modular app structure for future feature expansion." },
-            { i: "📄", t: "API Docs", d: "Auto-generated Swagger/Redoc documentation." },
-          ].map((x, i) => <Card key={i}><p style={{ fontSize: 20, marginBottom: 8 }}>{x.i}</p><p style={{ fontSize: 13, fontWeight: 900, color: N }}>{x.t}</p><p style={{ fontSize: 11, color: SM, marginTop: 4 }}>{x.d}</p></Card>)}
+            { i: "🛡️", t: "Security", d: "JWT Authentication, encrypted data transmission, and granular RBAC permissions." },
+            { i: "⚡", t: "Performance", d: "Optimized PostgreSQL queries, Redis result caching, and asynchronous task processing." },
+            { i: "📐", t: "Scalability", d: "Dockerized micro-service ready architecture with decoupled business logic layers." },
+            { i: "📄", t: "API Docs", d: "Comprehensive interactive documentation using Swagger UI and Redocly for developers." },
+          ].map((x, i) => (
+            <Card key={i} style={{ padding: "24px" }}>
+              <p style={{ fontSize: 32, marginBottom: 12 }}>{x.i}</p>
+              <p style={{ fontSize: 20, fontWeight: 900, color: N }}>{x.t}</p>
+              <p style={{ fontSize: 14, color: SM, marginTop: 8, lineHeight: 1.6 }}>{x.d}</p>
+            </Card>
+          ))}
         </div>
       </Body>
     </Slide>
@@ -243,23 +264,23 @@ function S8() {
       <SH num="08" label="AI Dental Scan" title="Computer Vision Integration" />
       <PB idx={1} />
       <Body>
-        <div style={{ display: "flex", gap: 24, height: "100%" }}>
-          <div style={{ flex: 1 }}>
-            <Card style={{ height: "100%" }}>
-              <p style={{ fontSize: 11, fontWeight: 700, color: G, marginBottom: 16 }}>The Process</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {["1. Image Capture", "2. Pre-processing", "3. GPT-4o Vision Analysis", "4. Result Categorization", "5. Recommendation Generation"].map((s, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <div style={{ width: 24, height: 24, borderRadius: "50%", background: G, color: "#fff", fontSize: 10, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center" }}>{i+1}</div>
-                    <span style={{ fontSize: 13, fontWeight: 600 }}>{s}</span>
+        <div style={{ display: "flex", gap: 32, height: "100%", marginTop: 10 }}>
+          <div style={{ flex: 1.2 }}>
+            <Card style={{ height: "100%", padding: "32px" }}>
+              <p style={{ fontSize: 14, fontWeight: 900, color: G, marginBottom: 24, textTransform: "uppercase" }}>Analysis Pipeline</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                {["1. High-Res Image Capture", "2. Dynamic Pre-processing", "3. GPT-4o Vision Integration", "4. Semantic Disease Detection", "5. Actionable Clinical Advice"].map((s, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                    <div style={{ width: 32, height: 32, borderRadius: "50%", background: G, color: "#fff", fontSize: 14, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center" }}>{i+1}</div>
+                    <span style={{ fontSize: 16, fontWeight: 700 }}>{s}</span>
                   </div>
                 ))}
               </div>
             </Card>
           </div>
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 12 }}>
-            <Card><h4 style={{ fontSize: 13, fontWeight: 900 }}>Detections</h4><p style={{ fontSize: 11, color: SM }}>Cavities, Gingivitis, Plaque, Calculus, and general tooth alignment.</p></Card>
-            <Card><h4 style={{ fontSize: 13, fontWeight: 900 }}>Accuracy</h4><p style={{ fontSize: 11, color: SM }}>Leveraging state-of-the-art vision models with dental-specific prompting.</p></Card>
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 20 }}>
+            <Card style={{ padding: "24px" }}><h4 style={{ fontSize: 18, fontWeight: 900, marginBottom: 10 }}>AI Detections</h4><p style={{ fontSize: 14, color: SM, lineHeight: 1.6 }}>Identifies Cavities, Gingivitis, Plaque, Calculus, and alignment issues with high confidence using contextual prompting.</p></Card>
+            <Card style={{ padding: "24px" }}><h4 style={{ fontSize: 18, fontWeight: 900, marginBottom: 10 }}>Vision Intelligence</h4><p style={{ fontSize: 14, color: SM, lineHeight: 1.6 }}>Processes raw image data into structured JSON results for consistent frontend rendering and history tracking.</p></Card>
           </div>
         </div>
       </Body>
@@ -274,16 +295,22 @@ function S9() {
       <SH num="09" label="Security" title="Authentication & Verification" />
       <PB idx={1} />
       <Body>
-        <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
-          <div style={{ width: "100%", maxWidth: 500 }}>
-            <div style={{ padding: "24px", background: N, borderRadius: 16, color: "#fff" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 24 }}>
-                <p style={{ fontWeight: 700 }}>OTP Verification Flow</p>
-                <span style={{ color: G }}>🔒 Secure</span>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: 30 }}>
+          <div style={{ width: "100%", maxWidth: 600 }}>
+            <div style={{ padding: "40px", background: N, borderRadius: 24, color: "#fff", boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 32, alignItems: "center" }}>
+                <p style={{ fontSize: 20, fontWeight: 800 }}>OTP Verification Flow</p>
+                <span style={{ padding: "6px 14px", background: `${G}30`, color: G, borderRadius: 20, fontSize: 12, fontWeight: 700 }}>🔒 SECURE PROTOCOL</span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {["Registration Request", "OTP Sent via Email", "OTP Validation (3m expiry)", "Token Generation (JWT)", "Profile Initialization"].map((s, i) => (
-                  <div key={i} style={{ padding: "10px 14px", background: "rgba(255,255,255,0.05)", borderRadius: 8, fontSize: 12 }}>{s}</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {[
+                  "1. Registration Request (Email/Phone)",
+                  "2. Secure OTP Sent via SMTP/FCM",
+                  "3. Server-side Validation (3m expiry)",
+                  "4. RSA-Signed JWT Generation",
+                  "5. Encrypted Profile Initialization"
+                ].map((s, i) => (
+                  <div key={i} style={{ padding: "14px 20px", background: "rgba(255,255,255,0.06)", borderRadius: 12, fontSize: 14, fontWeight: 600, border: "1px solid rgba(255,255,255,0.05)" }}>{s}</div>
                 ))}
               </div>
             </div>
@@ -301,19 +328,19 @@ function S10() {
       <SH num="10" label="Database Design" title="Schema & Relationships" />
       <PB idx={1} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginTop: 10 }}>
           {[
-            { t: "Users & Auth", f: ["User", "UserProfile", "OTP"] },
-            { t: "Dental Data", f: ["ScanReport", "ScanImage", "ChatSession"] },
-            { t: "Hygiene", f: ["BrushingSession", "DailyStreak", "Reminder"] },
-            { t: "Infrastructure", f: ["Notification", "Subscription", "CMS"] },
-            { t: "Commerce", f: ["Payment", "StripeWebhook", "Product"] },
-            { t: "AI Logs", f: ["AssistantMessage", "AIUsageLog"] },
+            { t: "Users & Auth", f: ["User (Custom)", "UserProfile", "OTPVerification"] },
+            { t: "Dental Analytics", f: ["ScanReport", "ScanImage", "ChatSession"] },
+            { t: "Hygiene Tracker", f: ["BrushingSession", "DailyStreak", "Reminder"] },
+            { t: "Core Engine", f: ["Notification", "Subscription", "CMSPage"] },
+            { t: "Finance", f: ["PaymentLog", "StripeEvent", "ProductPlan"] },
+            { t: "Intelligence", f: ["AssistantLog", "TokenUsageLog", "Prompts"] },
           ].map((x, i) => (
-            <Card key={i}>
-              <p style={{ fontSize: 11, fontWeight: 900, color: G, marginBottom: 8, textTransform: "uppercase" }}>{x.t}</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                {x.f.map(f => <span key={f} style={{ fontSize: 11, fontFamily: "monospace", color: N }}>• {f}</span>)}
+            <Card key={i} style={{ padding: "20px" }}>
+              <p style={{ fontSize: 13, fontWeight: 900, color: G, marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.05em" }}>{x.t}</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                {x.f.map(f => <span key={f} style={{ fontSize: 13, fontFamily: "monospace", color: N, fontWeight: 600 }}>• {f}</span>)}
               </div>
             </Card>
           ))}
@@ -338,17 +365,19 @@ function S11() {
       <SH num="11" label="Mobile App" title="Flutter App Structure" />
       <PB idx={2} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginTop: 10 }}>
           {features.map((x, i) => (
-            <Card key={i}>
-              <p style={{ fontSize: 20, marginBottom: 6 }}>{x.i}</p>
-              <p style={{ fontSize: 11, fontWeight: 700, color: N, fontFamily: "monospace" }}>{x.f}</p>
-              <p style={{ fontSize: 10, color: SM, marginTop: 4 }}>{x.d}</p>
+            <Card key={i} style={{ padding: "20px" }}>
+              <p style={{ fontSize: 32, marginBottom: 10 }}>{x.i}</p>
+              <p style={{ fontSize: 16, fontWeight: 900, color: N, fontFamily: "monospace" }}>{x.f}</p>
+              <p style={{ fontSize: 13, color: SM, marginTop: 6, lineHeight: 1.4 }}>{x.d}</p>
             </Card>
           ))}
         </div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
-          {["Provider","GetX","Dio","RxDart","GetIt","Firebase Messaging","FL Chart","Lottie","Camera","Table Calendar","RevenueCat"].map(t => <Pill key={t} label={t} />)}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 20 }}>
+          {["Provider","GetX","Dio","RxDart","GetIt","Firebase Messaging","FL Chart","Lottie","Camera","Table Calendar","RevenueCat"].map(t => (
+            <span key={t} style={{ padding: "6px 14px", borderRadius: 8, background: "#f1f5f9", color: N, fontSize: 13, fontWeight: 700, border: `1px solid ${DV}` }}>{t}</span>
+          ))}
         </div>
       </Body>
     </Slide>
@@ -362,18 +391,19 @@ function S12() {
       <SH num="12" label="Brushing Tracker" title="Smart Routine Tracking" />
       <PB idx={2} />
       <Body>
-        <Card><p style={{ fontSize: 11, fontWeight: 700, color: N, marginBottom: 8 }}>Routine Flow</p>
-          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
-            {["Start Routine","→","Timer","→","Finish","→","Streak Updated","→","FCM Reminder"].map((s, i) => s === "→" ? <span key={i} style={{ color: G, fontWeight: 700 }}>→</span> : <Pill key={i} label={s} />)}
+        <Card style={{ padding: "24px", marginBottom: 24 }}>
+          <p style={{ fontSize: 14, fontWeight: 900, color: N, marginBottom: 16, textTransform: "uppercase" }}>Interactive Routine Flow</p>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+            {["Start Routine","→","Timer","→","Finish","→","Streak Updated","→","FCM Reminder"].map((s, i) => s === "→" ? <span key={i} style={{ color: G, fontWeight: 900, fontSize: 20 }}>→</span> : <span key={i} style={{ padding: "10px 18px", borderRadius: 10, background: G, color: "#fff", fontSize: 14, fontWeight: 800 }}>{s}</span>)}
           </div>
         </Card>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           {[
-            { i: "🌅", t: "Morning Routine", d: "Start morning session, timer, mark complete, track per day." },
-            { i: "🌙", t: "Evening Routine",  d: "Same flow for evening. Both needed for daily streak." },
-            { i: "🔥", t: "Streak System",    d: "Both sessions done → streak +1. Missed day → reset to 1." },
-            { i: "📅", t: "Calendar View",    d: "Fully/partially completed days. Monthly filter." },
-          ].map((c, i) => <Card key={i}><p style={{ fontSize: 20, marginBottom: 6 }}>{c.i}</p><p style={{ fontSize: 12, fontWeight: 700, color: N }}>{c.t}</p><p style={{ fontSize: 11, color: SM, marginTop: 4 }}>{c.d}</p></Card>)}
+            { i: "🌅", t: "Morning Routine", d: "Start morning session, interactive timer, mark complete, track per day." },
+            { i: "🌙", t: "Evening Routine",  d: "Same flow for evening. Both sessions needed for daily streak progress." },
+            { i: "🔥", t: "Streak System",    d: "Both sessions done → streak +1. Missed day → reset to initial 1." },
+            { i: "📅", t: "Calendar View",    d: "Visualize fully/partially completed days with monthly filtering." },
+          ].map((c, i) => <Card key={i} style={{ padding: "24px" }}><p style={{ fontSize: 32, marginBottom: 12 }}>{c.i}</p><p style={{ fontSize: 18, fontWeight: 900, color: N }}>{c.t}</p><p style={{ fontSize: 14, color: SM, marginTop: 8, lineHeight: 1.5 }}>{c.d}</p></Card>)}
         </div>
       </Body>
     </Slide>
@@ -387,19 +417,19 @@ function S13() {
       <SH num="13" label="AI Chat Assistant" title="Dental AI Chatbot" />
       <PB idx={2} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 10 }}>
           {[
-            { i: "🗂️", t: "Session Management", d: "UUID-based sessions, soft-delete, multiple per user." },
-            { i: "🖼️", t: "Image Upload",      d: "Dental photos attached, base64 → GPT-4o Vision." },
-            { i: "🧠", t: "Context-Aware",     d: "Full history loaded per session for multi-turn chat." },
-            { i: "📋", t: "Structured Response", d: "AI returns JSON: title, message, analysis, next_step." },
-          ].map((c, i) => <Card key={i}><p style={{ fontSize: 20, marginBottom: 6 }}>{c.i}</p><p style={{ fontSize: 12, fontWeight: 700, color: N }}>{c.t}</p><p style={{ fontSize: 11, color: SM }}>{c.d}</p></Card>)}
+            { i: "🗂️", t: "Session Management", d: "UUID-based sessions, soft-delete support, multiple threads per user." },
+            { i: "🖼️", t: "Image Upload",      d: "Dental photos attached to chat, base64 processed → GPT-4o Vision." },
+            { i: "🧠", t: "Context-Aware",     d: "Full conversation history loaded per session for accurate multi-turn chat." },
+            { i: "📋", t: "Structured Output", d: "AI returns JSON schema: title, message, analysis, and next clinical steps." },
+          ].map((c, i) => <Card key={i} style={{ padding: "24px" }}><p style={{ fontSize: 32, marginBottom: 12 }}>{c.i}</p><p style={{ fontSize: 18, fontWeight: 900, color: N }}>{c.t}</p><p style={{ fontSize: 14, color: SM, marginTop: 6, lineHeight: 1.5 }}>{c.d}</p></Card>)}
         </div>
-        <Card style={{ marginTop: 10 }}>
-          <p style={{ fontSize: 11, fontWeight: 700, color: N, marginBottom: 8 }}>Chat Preview</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <div style={{ alignSelf: "flex-end", maxWidth: "75%", padding: "8px 12px", borderRadius: "12px 12px 4px 12px", background: N, color: "#fff", fontSize: 11 }}>My gums bleed when I brush. What should I do?</div>
-            <div style={{ alignSelf: "flex-start", maxWidth: "80%", padding: "8px 12px", borderRadius: "12px 12px 12px 4px", background: LB, color: TX, fontSize: 11, border: `1px solid ${DV}` }}>Bleeding gums may indicate gingivitis. I recommend gentle brushing, flossing, and consulting a dentist.</div>
+        <Card style={{ marginTop: 24, padding: "24px" }}>
+          <p style={{ fontSize: 14, fontWeight: 900, color: N, marginBottom: 16, textTransform: "uppercase" }}>Real-time Chat Preview</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ alignSelf: "flex-end", maxWidth: "75%", padding: "12px 20px", borderRadius: "18px 18px 4px 18px", background: N, color: "#fff", fontSize: 14, fontWeight: 500 }}>My gums bleed when I brush. What should I do?</div>
+            <div style={{ alignSelf: "flex-start", maxWidth: "80%", padding: "12px 20px", borderRadius: "18px 18px 18px 4px", background: LB, color: TX, fontSize: 14, border: `1px solid ${DV}`, lineHeight: 1.5 }}>Bleeding gums may indicate gingivitis. I recommend gentle brushing, flossing daily, and consulting a dentist if it persists.</div>
           </div>
         </Card>
       </Body>
@@ -414,20 +444,32 @@ function S14() {
       <SH num="14" label="Notifications" title="Smart Reminder System" />
       <PB idx={2} />
       <Body>
-        <Card><p style={{ fontSize: 11, fontWeight: 700, color: N, marginBottom: 10 }}>Celery Beat Schedule</p>
-          {[
-            { task: "send_brushing_reminders",  schedule: "Every minute (*)", icon: "🪥" },
-            { task: "toothbrush_change_reminder", schedule: "Daily at 14:11", icon: "🔄" },
-            { task: "monthly_scan_task", schedule: "Daily at 15:08", icon: "📅" },
-          ].map((t, i) => <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, padding: "8px 10px", borderRadius: 6, background: LB }}><span style={{ fontSize: 18 }}>{t.icon}</span><div><p style={{ fontSize: 11, fontWeight: 700, color: N }}>{t.task}</p><p style={{ fontSize: 10, color: SM }}>{t.schedule}</p></div></div>)}
-        </Card>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-          {[
-            { i: "🔔", t: "Firebase FCM", d: "Push via Firebase Admin SDK using stored fcm_token." },
-            { i: "📱", t: "In-App", d: "Notification model: title, body, is_read, created_at." },
-            { i: "⚙️", t: "User Preferences", d: "Morning/evening times, toothbrush interval configurable." },
-            { i: "��", t: "Timezone", d: "Celery uses Asia/Dhaka, reminders respect user's local time." },
-          ].map((c, i) => <Card key={i}><p style={{ fontSize: 18, marginBottom: 4 }}>{c.i}</p><p style={{ fontSize: 11, fontWeight: 700, color: N }}>{c.t}</p><p style={{ fontSize: 10, color: SM }}>{c.d}</p></Card>)}
+        <div style={{ display: "flex", gap: 24, height: "100%", marginTop: 10 }}>
+          <Card style={{ flex: 1.2, padding: "32px" }}>
+            <p style={{ fontSize: 14, fontWeight: 900, color: N, marginBottom: 24, textTransform: "uppercase" }}>Celery Beat Schedule</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {[
+                { task: "send_brushing_reminders",  schedule: "Every minute (*)", icon: "🪥" },
+                { task: "toothbrush_change_reminder", schedule: "Daily at 14:11", icon: "🔄" },
+                { task: "monthly_scan_task", schedule: "Daily at 15:08", icon: "📅" },
+              ].map((t, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 16, padding: "14px 20px", borderRadius: 12, background: LB, border: `1px solid ${DV}` }}>
+                  <span style={{ fontSize: 32 }}>{t.icon}</span>
+                  <div>
+                    <p style={{ fontSize: 15, fontWeight: 900, color: N }}>{t.task}</p>
+                    <p style={{ fontSize: 13, color: SM, marginTop: 2 }}>{t.schedule}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 16 }}>
+            {[
+              { i: "🔔", t: "Firebase FCM", d: "Push notifications via Firebase Admin SDK." },
+              { i: "📱", t: "In-App Alerts", d: "Live notification model with read/unread state." },
+              { i: "⚙️", t: "User Config", d: "Configurable times for all routine reminders." },
+            ].map((c, i) => <Card key={i} style={{ padding: "20px" }}><p style={{ fontSize: 24, marginBottom: 8 }}>{c.i}</p><p style={{ fontSize: 16, fontWeight: 900, color: N }}>{c.t}</p><p style={{ fontSize: 13, color: SM, marginTop: 4 }}>{c.d}</p></Card>)}
+          </div>
         </div>
       </Body>
     </Slide>
@@ -437,30 +479,30 @@ function S14() {
 /* S15 — Onboarding (Al Mamun) */
 function S15() {
   const steps = [
-    { n: "01", i: "📧", t: "Register", d: "Email + password → OTP sent" },
-    { n: "02", i: "✅", t: "Verify OTP", d: "6-digit OTP (3 min expiry)" },
-    { n: "03", i: "🎯", t: "Select Goals", d: "Choose from preset dental goals" },
-    { n: "04", i: "⚙️", t: "Profile Setup", d: "Brushing times, toothbrush interval, scan day" },
-    { n: "05", i: "🔔", t: "Notifications", d: "Configure reminder preferences" },
-    { n: "06", i: "🏠", t: "Home Dashboard", d: "Full access unlocked" },
+    { n: "01", i: "📧", t: "Register", d: "Email + password → Secure OTP sent" },
+    { n: "02", i: "✅", t: "Verify OTP", d: "6-digit OTP validation (3 min expiry)" },
+    { n: "03", i: "🎯", t: "Select Goals", d: "Choose from preset dental health goals" },
+    { n: "04", i: "⚙️", t: "Profile Setup", d: "Brushing times, scan day preferences" },
+    { n: "05", i: "🔔", t: "Notifications", d: "Configure smart reminder preferences" },
+    { n: "06", i: "🏠", t: "Home Unlocked", d: "Full dashboard access granted" },
   ];
   return (
     <Slide>
       <SH num="15" label="Onboarding & UX" title="User Onboarding Flow" />
       <PB idx={3} />
       <Body>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 10 }}>
           {steps.map((s, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", borderRadius: 8, background: "#fff", border: `1px solid ${DV}` }}>
-              <div style={{ width: 28, height: 28, borderRadius: 6, background: N, color: G, fontSize: 11, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center" }}>{s.n}</div>
-              <span style={{ fontSize: 20 }}>{s.i}</span>
-              <div style={{ flex: 1 }}><p style={{ fontSize: 12, fontWeight: 700, color: N }}>{s.t}</p><p style={{ fontSize: 11, color: SM }}>{s.d}</p></div>
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 16, background: "#fff", border: `1px solid ${DV}` }}>
+              <div style={{ width: 36, height: 36, borderRadius: 10, background: N, color: G, fontSize: 14, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center" }}>{s.n}</div>
+              <span style={{ fontSize: 32 }}>{s.i}</span>
+              <div style={{ flex: 1 }}><p style={{ fontSize: 16, fontWeight: 900, color: N }}>{s.t}</p><p style={{ fontSize: 13, color: SM, marginTop: 2 }}>{s.d}</p></div>
             </div>
           ))}
         </div>
-        <Card style={{ marginTop: 10 }}><p style={{ fontSize: 11, fontWeight: 700, color: N, marginBottom: 8 }}>UserProfileSetup Fields</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-            {["morning_enabled","morning_brushing_time","evening_enabled","evening_brushing_time","toothbrush_enabled","toothbrush_interval_days","monthly_scan_enabled","monthly_scan_day"].map(f => <span key={f} style={{ padding: "2px 8px", borderRadius: 4, fontSize: 10, fontFamily: "monospace", background: LB, color: N }}>{f}</span>)}
+        <Card style={{ marginTop: 20, padding: "20px" }}><p style={{ fontSize: 14, fontWeight: 900, color: N, marginBottom: 12, textTransform: "uppercase" }}>Profile Setup Schema</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {["morning_enabled","morning_brushing_time","evening_enabled","evening_brushing_time","toothbrush_enabled","toothbrush_interval_days","monthly_scan_enabled","monthly_scan_day"].map(f => <span key={f} style={{ padding: "4px 10px", borderRadius: 6, fontSize: 12, fontFamily: "monospace", background: LB, color: N, fontWeight: 600 }}>{f}</span>)}
           </div>
         </Card>
       </Body>
@@ -471,22 +513,22 @@ function S15() {
 /* S16 — Features (Al Mamun) */
 function S16() {
   const features = [
-    { i: "🦷", t: "AI Dental Scan", c: N }, { i: "💬", t: "AI Chat", c: N },
-    { i: "🪥", t: "Brushing Tracker", c: N }, { i: "🔔", t: "Smart Reminders", c: N },
-    { i: "📈", t: "Progress Charts", c: N }, { i: "🎯", t: "Goal Setting", c: N },
-    { i: "🔐", t: "Secure Auth", c: N }, { i: "⭐", t: "Subscriptions", c: N },
-    { i: "📄", t: "CMS Pages", c: N },
+    { i: "🦷", t: "AI Dental Scan" }, { i: "💬", t: "AI Chat" },
+    { i: "🪥", t: "Brushing Tracker" }, { i: "🔔", t: "Smart Reminders" },
+    { i: "📈", t: "Progress Charts" }, { i: "🎯", t: "Goal Setting" },
+    { i: "🔐", t: "Secure Auth" }, { i: "⭐", t: "Subscriptions" },
+    { i: "📄", t: "CMS Pages" },
   ];
   return (
     <Slide>
       <SH num="16" label="Features Showcase" title="All Core Features" />
       <PB idx={3} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginTop: 10 }}>
           {features.map((f, i) => (
-            <Card key={i} style={{ textAlign: "center", padding: "16px 10px" }}>
-              <p style={{ fontSize: 28, marginBottom: 8 }}>{f.i}</p>
-              <p style={{ fontSize: 12, fontWeight: 700, color: N }}>{f.t}</p>
+            <Card key={i} style={{ textAlign: "center", padding: "28px 16px", background: "#fff", transition: "transform 0.2s" }}>
+              <p style={{ fontSize: 48, marginBottom: 16 }}>{f.i}</p>
+              <p style={{ fontSize: 16, fontWeight: 900, color: N }}>{f.t}</p>
             </Card>
           ))}
         </div>
@@ -499,23 +541,23 @@ function S16() {
 function S17() {
   return (
     <Slide dark>
-      <SH num="17" label="Technology Stack" title="Built With" dark />
+      <SH num="17" label="Technology Stack" title="Built With Modern Tools" dark />
       <PB idx={3} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
-          <div><p style={{ fontSize: 11, fontWeight: 700, color: G, marginBottom: 8 }}>📱 Mobile (Flutter)</p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{["Flutter 3.x","Dart","Provider","GetX","Dio","RxDart","GetIt","Firebase","FL Chart","Lottie","Camera","RevenueCat"].map(t => <span key={t} style={{ padding: "3px 8px", borderRadius: 4, fontSize: 10, background: "rgba(255,255,255,0.08)", color: "#cbd5e1", border: "1px solid rgba(255,255,255,0.12)" }}>{t}</span>)}</div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
+          <div><p style={{ fontSize: 14, fontWeight: 900, color: G, marginBottom: 16, textTransform: "uppercase" }}>📱 Mobile (Flutter)</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>{["Flutter 3.x","Dart","Provider","GetX","Dio","RxDart","GetIt","Firebase","FL Chart","Lottie","Camera","RevenueCat"].map(t => <span key={t} style={{ padding: "6px 12px", borderRadius: 8, background: "rgba(255,255,255,0.06)", color: "#e2e8f0", border: "1px solid rgba(255,255,255,0.1)", fontSize: 13, fontWeight: 600 }}>{t}</span>)}</div>
           </div>
-          <div><p style={{ fontSize: 11, fontWeight: 700, color: G, marginBottom: 8 }}>⚙️ Backend (Django)</p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{["Django 5.2","DRF","SimpleJWT","Celery","Redis","PostgreSQL","OpenAI","Firebase Admin","Stripe","Docker","Gunicorn","WhiteNoise"].map(t => <span key={t} style={{ padding: "3px 8px", borderRadius: 4, fontSize: 10, background: "rgba(255,255,255,0.08)", color: "#cbd5e1", border: "1px solid rgba(255,255,255,0.12)" }}>{t}</span>)}</div>
+          <div><p style={{ fontSize: 14, fontWeight: 900, color: G, marginBottom: 16, textTransform: "uppercase" }}>⚙️ Backend (Django)</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>{["Django 5.x","DRF","SimpleJWT","Celery","Redis","PostgreSQL","OpenAI","Firebase Admin","Stripe","Docker","Gunicorn","WhiteNoise"].map(t => <span key={t} style={{ padding: "6px 12px", borderRadius: 8, background: "rgba(255,255,255,0.06)", color: "#e2e8f0", border: "1px solid rgba(255,255,255,0.1)", fontSize: 13, fontWeight: 600 }}>{t}</span>)}</div>
           </div>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
           {[
-            { i: "🤖", t: "AI", l: "OpenAI GPT-4o, Vision API" },
-            { i: "☁️", t: "Cloud", l: "Firebase FCM, Google OAuth, Stripe" },
-            { i: "🛠️", t: "DevOps", l: "Docker, Gunicorn, Redis, PostgreSQL" },
-          ].map((g, i) => <div key={i} style={{ padding: "12px", borderRadius: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}><p style={{ fontSize: 20, marginBottom: 6 }}>{g.i}</p><p style={{ fontSize: 12, fontWeight: 700, color: G }}>{g.t}</p><p style={{ fontSize: 10, color: "#64748b", marginTop: 4 }}>{g.l}</p></div>)}
+            { i: "🤖", t: "AI Intelligence", l: "GPT-4o, Vision API, Advanced Prompting" },
+            { i: "☁️", t: "Cloud Services", l: "Firebase FCM, Google Auth, Stripe" },
+            { i: "🛠️", t: "Infrastructure", l: "Docker, Gunicorn, Redis Stack, PostgreSQL" },
+          ].map((g, i) => <div key={i} style={{ padding: "20px", borderRadius: 16, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}><p style={{ fontSize: 32, marginBottom: 12 }}>{g.i}</p><p style={{ fontSize: 18, fontWeight: 900, color: G }}>{g.t}</p><p style={{ fontSize: 13, color: "#94a3b8", marginTop: 6, lineHeight: 1.4 }}>{g.l}</p></div>)}
         </div>
       </Body>
     </Slide>
@@ -526,22 +568,22 @@ function S17() {
 function S18() {
   return (
     <div style={{ height: "100%", display: "flex", overflow: "hidden", background: N }}>
-      <div style={{ width: "55%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px 48px" }}>
-        <div style={{ width: 50, height: 4, background: G, borderRadius: 2, marginBottom: 24 }} />
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: G, marginBottom: 12 }}>Thank You</p>
-        <h1 style={{ fontSize: "clamp(2.5rem,5vw,3.5rem)", fontWeight: 900, color: "#fff", lineHeight: 1.1, marginBottom: 16 }}>ToothCare+</h1>
-        <p style={{ fontSize: "clamp(0.8rem,1.5vw,1rem)", color: "#94a3b8", marginBottom: 32, maxWidth: 360 }}>Smarter Dental Health, One Scan at a Time</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, marginBottom: 32 }}>
-          {[["12+","Backend Modules"],["9+","Core Features"],["2","Platforms"]].map(([n,l]) => <div key={l} style={{ padding: "12px", borderRadius: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", textAlign: "center" }}><p style={{ fontSize: 20, fontWeight: 900, color: G }}>{n}</p><p style={{ fontSize: 10, color: "#64748b" }}>{l}</p></div>)}
+      <div style={{ width: "55%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px 64px" }}>
+        <div style={{ width: 60, height: 6, background: G, borderRadius: 3, marginBottom: 32 }} />
+        <p style={{ fontSize: 14, fontWeight: 900, letterSpacing: "0.3em", textTransform: "uppercase", color: G, marginBottom: 16 }}>Final Summary</p>
+        <h1 style={{ fontSize: "5rem", fontWeight: 900, color: "#fff", lineHeight: 1.1, marginBottom: 20 }}>ToothCare<span style={{ color: G }}>+</span></h1>
+        <p style={{ fontSize: "1.4rem", color: "#94a3b8", marginBottom: 48, maxWidth: 450, lineHeight: 1.6 }}>Smarter Dental Health, One Scan at a Time. Thank you for your attention.</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginBottom: 48 }}>
+          {[["15+","API Endpoints"],["9","Core Features"],["2","Platforms"]].map(([n,l]) => <div key={l} style={{ padding: "20px 12px", borderRadius: 16, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", textAlign: "center" }}><p style={{ fontSize: 28, fontWeight: 900, color: G }}>{n}</p><p style={{ fontSize: 12, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 4 }}>{l}</p></div>)}
         </div>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 16 }}>
-          <p style={{ fontSize: 10, color: "#64748b", marginBottom: 8, letterSpacing: "0.1em", textTransform: "uppercase" }}>Developed by</p>
-          <div style={{ display: "flex", gap: 16 }}>{TEAM.map((m, i) => <div key={i}><p style={{ fontSize: 12, fontWeight: 700, color: "#fff" }}>{m.name}</p><p style={{ fontSize: 10, color: "#64748b", fontFamily: "monospace" }}>{m.id}</p></div>)}</div>
-          <p style={{ fontSize: 11, color: "#64748b", marginTop: 16 }}>Supervised by <span style={{ color: G, fontWeight: 700 }}>Md Shamim Hossain</span></p>
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 32 }}>
+          <p style={{ fontSize: 12, color: "#64748b", marginBottom: 16, letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 700 }}>Project Contributors</p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>{TEAM.map((m, i) => <div key={i}><p style={{ fontSize: 14, fontWeight: 900, color: "#fff" }}>{m.name}</p><p style={{ fontSize: 12, color: "#64748b", fontFamily: "monospace" }}>{m.id}</p></div>)}</div>
+          <p style={{ fontSize: 15, color: "#94a3b8", marginTop: 32, fontWeight: 500 }}>Supervised by <span style={{ color: G, fontWeight: 900 }}>Md Shamim Hossain</span></p>
         </div>
       </div>
-      <div style={{ flex: 1, background: "rgba(255,255,255,0.03)", borderLeft: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <div style={{ width: 120, height: 120, borderRadius: "50%", background: G, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 56, fontWeight: 900, color: N }}>✓</div>
+      <div style={{ flex: 1, background: "rgba(255,255,255,0.02)", borderLeft: "1px solid rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: 160, height: 160, borderRadius: "50%", background: G, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 80, fontWeight: 900, color: N, boxShadow: `0 0 60px ${G}40` }}>✓</div>
       </div>
     </div>
   );
