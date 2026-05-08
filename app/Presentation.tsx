@@ -411,7 +411,13 @@ function S12() {
             { i: "🌙", t: "Evening Routine",  d: "Same flow for evening. Both sessions needed for daily streak progress." },
             { i: "🔥", t: "Streak System",    d: "Both sessions done → streak +1. Missed day → reset to initial 1." },
             { i: "📅", t: "Calendar View",    d: "Visualize fully/partially completed days with monthly filtering." },
-          ].map((c, i) => <Card key={i} style={{ padding: "32px" }}><p style={{ fontSize: 44, marginBottom: 16 }}>{c.i}</p><p style={{ fontSize: 22, fontWeight: 900, color: "#fff" }}>{c.t}</p><p style={{ fontSize: 16, color: TX, marginTop: 10, lineHeight: 1.6 }}>{c.d}</p></Card>)}
+          ].map((c, i) => (
+            <Card key={i} style={{ padding: "32px" }}>
+              <p style={{ fontSize: 44, marginBottom: 16 }}>{c.i}</p>
+              <p style={{ fontSize: 22, fontWeight: 900, color: "#fff" }}>{c.t}</p>
+              <p style={{ fontSize: 16, color: TX, marginTop: 10, lineHeight: 1.6 }}>{c.d}</p>
+            </Card>
+          ))}
         </div>
       </Body>
     </Slide>
@@ -552,7 +558,7 @@ function S17() {
       <SH num="17" label="Technology Stack" title="Built With Modern Tools" />
       <PB idx={3} />
       <Body>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 32 }}>
+        <div className="res-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 32 }}>
           <div><p style={{ fontSize: 18, fontWeight: 900, color: G, marginBottom: 20, textTransform: "uppercase", letterSpacing: "0.1em" }}>📱 Mobile (Flutter)</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>{["Flutter 3.x","Dart","Provider","GetX","Dio","RxDart","GetIt","Firebase","FL Chart","Lottie","Camera","RevenueCat"].map(t => <span key={t} style={{ padding: "8px 16px", borderRadius: 10, background: "rgba(255,255,255,0.06)", color: "#e2e8f0", border: "1px solid rgba(255,255,255,0.1)", fontSize: 15, fontWeight: 600 }}>{t}</span>)}</div>
           </div>
@@ -560,7 +566,7 @@ function S17() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>{["Django 5.x","DRF","SimpleJWT","Celery","Redis","PostgreSQL","OpenAI","Firebase Admin","Stripe","Docker","Gunicorn","WhiteNoise"].map(t => <span key={t} style={{ padding: "8px 16px", borderRadius: 10, background: "rgba(255,255,255,0.06)", color: "#e2e8f0", border: "1px solid rgba(255,255,255,0.1)", fontSize: 15, fontWeight: 600 }}>{t}</span>)}</div>
           </div>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+        <div className="res-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
           {[
             { i: "🤖", t: "AI Intelligence", l: "GPT-4o, Vision API, Advanced Prompting" },
             { i: "☁️", t: "Cloud Services", l: "Firebase FCM, Google Auth, Stripe" },
@@ -586,7 +592,7 @@ function S18() {
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 40 }}>
           <p style={{ fontSize: 14, color: "#64748b", marginBottom: 20, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700 }}>Project Contributors</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>{TEAM.map((m, i) => <div key={i}><p style={{ fontSize: 18, fontWeight: 900, color: "#fff" }}>{m.name}</p><p style={{ fontSize: 14, color: G, fontFamily: "monospace", fontWeight: 700 }}>{m.id}</p></div>)}</div>
+          <div className="res-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>{TEAM.map((m, i) => <div key={i}><p style={{ fontSize: 18, fontWeight: 900, color: "#fff" }}>{m.name}</p><p style={{ fontSize: 14, color: G, fontFamily: "monospace", fontWeight: 700 }}>{m.id}</p></div>)}</div>
           <p style={{ fontSize: 18, color: "#94a3b8", marginTop: 40, fontWeight: 500 }}>Supervised by <span style={{ color: G, fontWeight: 900 }}>Md Shamim Hossain</span></p>
         </div>
       </div>
@@ -597,9 +603,9 @@ function S18() {
   );
 }
 
-/* ════════════════════��═════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════════════════
    MAIN SHELL
-══════════════════════════════════════════════════════════════════ */
+   ══════════════════════════════════════════════════════════════════ */
 const SLIDES = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18];
 const META = [
   {t:"Title",o:0},{t:"Team",o:0},{t:"Supervisor",o:0},{t:"Overview",o:0},{t:"Architecture",o:0},{t:"Deployment",o:0},
@@ -633,9 +639,9 @@ export default function Presentation() {
           <button onClick={()=>go(c+1)} disabled={c===SLIDES.length-1} style={{width:32,height:32,borderRadius:"50%",border:"none",background:G,color:N,cursor:c===SLIDES.length-1?"not-allowed":"pointer",opacity:c===SLIDES.length-1?0.3:1}}>▶</button>
         </div>
       </div>
-      <style>{`
-        @keyframes si{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
-        @keyframes sil{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes si { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes sil { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
         @media (max-width: 768px) {
           .res-slide { padding: 24px 20px !important; }
           .res-flex { flex-direction: column !important; height: auto !important; }
@@ -648,7 +654,7 @@ export default function Presentation() {
           .res-body { font-size: 1.2rem !important; }
           .res-full-width { width: 100% !important; padding: 40px 24px !important; }
         }
-      `}</style>
+      ` }} />
     </div>
   );
 }
